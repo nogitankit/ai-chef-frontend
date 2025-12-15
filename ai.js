@@ -1,7 +1,7 @@
 export async function getRecipeFromChef(ingredientsArr) {
     try {
 
-        const response = await fetch("http://13.204.174.24:3000/get-recipe", {
+        const response = await fetch("https://api.mayojs.xyz/get-recipe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
