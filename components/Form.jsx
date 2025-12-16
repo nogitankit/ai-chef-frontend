@@ -18,12 +18,24 @@ export default function Form(){
 
     async function getRecipe(){
         setLock(true)
-        const recipeMarkdown = await getRecipeFromChef(ingredients)
-        setRecipe(recipeMarkdown)
+        try{
+            const recipeMarkdown = await getRecipeFromChef(ingredients)
+            setRecipe(recipeMarkdown)
+        }
+        catch(error){
+            console.log(error)
+        }
+        finally{
+            setLock(false)
+        }
+        
     }
 
     return(
         <main>
+            <h3 className="form-instruction">
+               What's in your fridge?
+            </h3>
             <form action={handleSubmit} className="form">
                 <input
                     type="text"
@@ -34,7 +46,7 @@ export default function Form(){
             </form>
 
             {
-                ingredients.length > 0 && <IngredientList ingredients={ingredients} getRecipe={getRecipe} isLocked={lock}/>
+                ingredients.length > 0 && <IngredientList ingredients={ingredients} getRecipe={getRecipe} isLocked={lock} recipeAvailable={recipe !== ""}/>
             }
             {
                 recipe && <Recipe recipe = {recipe}/>

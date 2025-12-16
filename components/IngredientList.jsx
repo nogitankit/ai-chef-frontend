@@ -21,12 +21,14 @@ export default function IngredientList(props){
                 </div>
                 <button 
                     onClick={props.getRecipe}
-                    disabled={props.isLocked}
+                    disabled={props.isLocked || props.recipeAvailable}
                     style={{ 
                         cursor: props.isLocked ? "not-allowed" : "pointer",
-                        opacity: props.isLocked ? 0.5 : 1
+                        opacity: props.isLocked ? 0.8 : 1
                     }}
-                >Get a recipe</button>
+                >
+                    {props.isLocked ? "Thinking..." : "Get a recipe"}
+                </button>
             </div>
             }
             </section>
