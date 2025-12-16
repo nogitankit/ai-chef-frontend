@@ -1,9 +1,9 @@
-export default function Header(){
-    return(
-        <div className="header">
-            <img src="chef-logo.png" alt="chef-logo" className="chef-logo" />
+import chefLogo from "/chef-logo.png"
+export default function Header() {
+    return (
+        <header className="header">
+            <img src={chefLogo} alt="Chef Claude Logo" className="chef-logo" />
             <h1 className="title">AI Chef</h1>
-
-        </div>
+        </header>
     )
 }
