@@ -179,3 +179,15 @@ main {
     color: #374151;
     font-size: 1.05rem;
 }
+
+.footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px; 
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.footer small {
+    display: block;
+}
