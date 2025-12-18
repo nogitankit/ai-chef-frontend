@@ -9,6 +9,10 @@ body {
     background-color: #f3f4f6; 
     color: #374151;
 }
+body.dark-mode {
+    background-color: #1f2937; 
+    color: #d1d5db; 
+}
 
 /* --- Header Section --- */
 .header {
@@ -190,4 +194,18 @@ main {
 
 .footer small {
     display: block;
+}
+.light-dark{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 8px 12px;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
