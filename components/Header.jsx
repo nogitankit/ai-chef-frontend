@@ -1,8 +1,13 @@
+import React from "react"
 import chefLogo from "/chef-logo.png"
 export default function Header() {
 
+    const [isDark, setIsDark] = React.useState(false);
+    
     function toggleDarkmode(){
         document.body.classList.toggle("dark-mode")
+        setIsDark(!isDark)
+
     }
 
     return (
@@ -11,7 +16,7 @@ export default function Header() {
             <h1 className="title">AI Chef</h1>
             <button className="light-dark"
                     onClick={toggleDarkmode}
-            >light-mode
+            >{isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}
             </button>
         </header>
     )
