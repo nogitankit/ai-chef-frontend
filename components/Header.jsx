@@ -6,8 +6,7 @@ export default function Header() {
     
     function toggleDarkmode(){
         document.body.classList.toggle("dark-mode")
-        setIsDark(!isDark)
-
+        setIsDark(!isDark)        
     }
 
     return (
