@@ -15,6 +15,15 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://chef.mayojs.xyz/og-image.png" />
+    <script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      // documentElement targets the <html> tag, which exists immediately
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,21 +1,37 @@
 import React from "react"
 import chefLogo from "/chef-logo.png"
-export default function Header() {
 
-    const [isDark, setIsDark] = React.useState(false);
-    
-    function toggleDarkmode(){
-        document.body.classList.toggle("dark-mode")
-        setIsDark(!isDark)        
+export default function Header() {
+    // 1. Initialize state by checking localStorage first
+    const [isDark, setIsDark] = React.useState(() => {
+        return localStorage.getItem("theme") === "dark"
+    });
+
+    // 2. Sync the body class and localStorage whenever isDark changes
+    React.useEffect(() => {
+        if (isDark) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+    }, [isDark]);
+
+    function toggleDarkmode() {
+        setIsDark(prevMode => !prevMode);
     }
 
     return (
         <header className="header">
             <img src={chefLogo} alt="Chef Claude Logo" className="chef-logo" />
             <h1 className="title">AI Chef</h1>
-            <button className="light-dark"
-                    onClick={toggleDarkmode}
-            >{isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}
+            <button 
+                className="light-dark"
+                onClick={toggleDarkmode}
+                aria-label="Toggle dark mode"
+            >
+                {isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}
             </button>
         </header>
     )
