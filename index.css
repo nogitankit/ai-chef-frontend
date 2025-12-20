@@ -7,8 +7,7 @@
     --text-muted: #6b7280;
     --border-color: #d1d5db;
     --header-shadow: rgba(0, 0, 0, 0.05);
-    
-    /* Get Recipe Section (Amber/Orange theme) */
+
     --bg-get-recipe: #fffbeb;
     --border-get-recipe: #fcd34d;
     --text-get-recipe-h3: #92400e;
@@ -67,6 +66,24 @@ body {
     color: var(--text-title);          
     margin: 0;             
     letter-spacing: -0.5px; 
+}
+
+.light-dark {
+    position: absolute;
+    right: 20px;
+    padding: 8px 12px;
+    background-color: var(--text-title);
+    color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.toggle{
+    height: 25px;
+    width: auto;
 }
 
 /* --- Main Layout "Card" --- */
@@ -170,15 +187,3 @@ body.dark-mode .form > button {
     color: var(--text-muted);
 }
 
-.light-dark {
-    position: absolute;
-    right: 20px;
-    padding: 8px 12px;
-    background-color: var(--text-title);
-    color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s;
-}
