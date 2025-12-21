@@ -5,7 +5,6 @@ import { getRecipeFromChef } from "../ai"
 
 export default function Form(){
 
-    
     let [ingredients, setIngredients] = React.useState([])
 
     function handleSubmit(stuff){   
@@ -15,6 +14,16 @@ export default function Form(){
     }
     const [recipe, setRecipe] = React.useState("")
     const [lock, setLock] = React.useState(false)
+
+    //for the scroll thing once the recipe shows up
+    const recipeSection = React.useRef(null)
+    React.useEffect(() => {
+        if(recipe !== "" && recipeSection.current){
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+            
+        }
+        
+    }, [recipe]) 
 
     async function getRecipe(){
         setLock(true)
@@ -46,7 +55,8 @@ export default function Form(){
             </form>
 
             {
-                ingredients.length > 0 && <IngredientList ingredients={ingredients} getRecipe={getRecipe} isLocked={lock} recipeAvailable={recipe !== ""}/>
+                ingredients.length > 0 &&
+                <IngredientList ref={recipeSection} ingredients={ingredients} getRecipe={getRecipe} isLocked={lock} recipeAvailable={recipe !== ""}/>
             }
             {
                 recipe && <Recipe recipe = {recipe}/>

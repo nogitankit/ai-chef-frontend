@@ -152,6 +152,8 @@ body.dark-mode .form > button {
     border-radius: 20px;
     font-weight: 500;
     color: var(--text-main);
+    display: inline-block;
+    margin: 5px 8px 5px 0;
 }
 
 /* --- Get Recipe Section --- */
@@ -172,6 +174,18 @@ body.dark-mode .form > button {
 
 .get-recipe-container p {
     color: var(--text-get-recipe-p);
+}
+
+.get-recipe-container button {
+    border: none;
+    border-radius: 6px;
+    background: #D17557;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #FAFAF8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
 }
 
 /* --- Recipe Output --- */

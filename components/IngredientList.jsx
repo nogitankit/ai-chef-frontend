@@ -15,11 +15,12 @@ export default function IngredientList(props){
            
             {props.ingredients.length > 2 && 
             <div className="get-recipe-container">
-                <div>
+                <div ref={props.ref}>
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients</p>
                 </div>
                 <button 
+                    
                     onClick={props.getRecipe}
                     disabled={props.isLocked || props.recipeAvailable}
                     style={{ 

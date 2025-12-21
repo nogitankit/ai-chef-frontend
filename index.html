@@ -19,7 +19,6 @@
   (function() {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
-      // documentElement targets the <html> tag, which exists immediately
       document.documentElement.classList.add("dark-mode");
     }
   })();
