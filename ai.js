@@ -1,7 +1,7 @@
 export async function getRecipeFromChef(ingredientsArr) {
     try {
 
-        const response = await fetch("https://api.mayojs.xyz/get-recipe", {
+        const response = await fetch("https://api.m4yo.dev/get-recipe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
